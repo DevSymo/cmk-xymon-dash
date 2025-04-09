@@ -1178,17 +1178,6 @@ class LayoutBetterTiles(LayoutTiled):
             rendered = [cell.render(row, render_link_to_view) for cell in render_cells]
 
             html.open_tr()
-            html.open_td(class_=["tl", rendered[1][0]])
-            if show_checkboxes:
-                render_checkbox(view, row, len(render_cells) - 1)
-            html.write_text(rendered[1][1])
-            html.close_td()
-            html.open_td(class_=["tr", rendered[2][0]])
-            html.write_text(rendered[2][1])
-            html.close_td()
-            html.close_tr()
-
-            html.open_tr()
             html.open_td(colspan=2, class_=["center", "larger_text", rendered[0][0]])
             html.write_text(rendered[0][1])
             html.close_td()
@@ -1200,15 +1189,6 @@ class LayoutBetterTiles(LayoutTiled):
                 html.write_text(cont)
                 html.close_td()
                 html.close_tr()
-
-            html.open_tr()
-            html.open_td(class_=["bl", rendered[3][0]])
-            html.write_text(rendered[3][1])
-            html.close_td()
-            html.open_td(class_=["br", rendered[4][0]])
-            html.write_text(rendered[4][1])
-            html.close_td()
-            html.close_tr()
 
             html.close_table()
             html.close_div()
@@ -1249,10 +1229,17 @@ class LayoutBetterTiles(LayoutTiled):
             text-decoration: none;
             color: inherit;
             display: block;
+            width: 100%;
+            height: 100%;
         }
         
         .better_tiles .tile_link:focus {
             outline: none;
+        }
+                   
+        .better_tiles .better_tile table {
+            height: 50px !important;
+            width: 100%;
         }
         """)
         
