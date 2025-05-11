@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8; py-indent-offset: 4 -*-
 
 from cmk.gui.painter.v0.base import Painter, painter_registry
 from cmk.gui.type_defs import Row
